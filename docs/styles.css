@@ -45,3 +45,13 @@ h1 {
 ul {
 	padding-left: 20px;
 }
+
+a {
+	text-decoration: none;
+	color: #f89521;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #ee3a68;
+}

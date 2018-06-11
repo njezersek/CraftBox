@@ -54,7 +54,7 @@ For info on installation see the [Installation](docs/Installation.md) section.
 ## **Contributors:**
 * Erazem Kokot ([JustMeErazem](https://github.com/JustMeErazem)) - Main developer
 * Nejc Jezeršek ([njezersek](https://github.com/njezersek) - [Website](https://jezersek.eu.org))  - Main developer
-* Domen Klinc ([@domen_klinc](https://www.instagram.com/domen_klinc)) - Logo, Web design
+* Domen Klinc ([@domen_klinc](https://www.instagram.com/domen_klinc)) - Graphical design
 
 ## **How you can help the project:**
 * Contribute to the Wiki with examples, configurations, tutorials
