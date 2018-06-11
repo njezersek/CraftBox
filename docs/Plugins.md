@@ -2,7 +2,7 @@
 
 ## General info
 
-Plugins are additional files or even mods, that alter the gaming experience in some way. They may do so by adding new files or resources, or by adding new commands and permissions. One of the plugins we use, [NoSpawnChunks](https://dev.bukkit.org/projects/nospawnchunks), "prevents spawn chunks being loaded into memory for all worlds on the server". In practice this means your server should be able to run a lot faster, because it doesn't have to load all the chunks and then keep them loaded, even after they are not in use.
+Plugins are additional files or even mods, that alter the gaming experience in some way. They may do so by adding new files or resources, or by adding new commands and permissions. One of the plugins we use, [NoSpawnChunks](https://dev.bukkit.org/projects/nospawnchunks), "prevents spawn chunks being loaded into memory for all worlds on the server". In practice this means your server should be able to run a lot faster, because it doesn't have to load all the chunks and then keep them loaded, even after they are not in use. The other plugin we use is [Time Restriction](https://github.com/JustMeErazem/CraftBox/tree/master/TimeRestriction), a plugin which was built by one of our developers, Nejc Jezeršek. It enables you to set a time limit for the server through the web console and then kicks all the players when the limit is active.
 
 ## Installation
 

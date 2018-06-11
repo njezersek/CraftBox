@@ -4,7 +4,7 @@ CraftBox is a RaspberryPi powered Local Area Network Minecraft Server intended f
 
 ## **CraftBox's features include:**
 * Optimised Spigot server
-* Some included plugins ([NoSpawnChunks](https://dev.bukkit.org/projects/nospawnchunks), and we're building a time restriction one)
+* Some included plugins ([NoSpawnChunks](https://dev.bukkit.org/projects/nospawnchunks) and [Time Restriction](https://github.com/JustMeErazem/CraftBox/tree/master/TimeRestriction) - We've built this one ourselves, courtesy of Nejc Jezeršek)
 * Material web management console
 * Creating new worlds
 * Uploading or backing up worlds
@@ -38,7 +38,6 @@ Users can connect to CraftBox's network and start playing on its Minecraft Serve
 
 ## **Todo list:**
 * Custom plugin upload
-* Better time restriction (with custom built plugin)
 * Generate custom structures using [WorldEdit](https://dev.bukkit.org/projects/worldedit "WorldEdit Website")
 * Separate builds for Raspberry Pi 3 and older versions (built-in WiFi or external Wireless adapter)
 * Edit permissions (some files are owned by root - a quick fix for www-data access) --> This one has a priority
