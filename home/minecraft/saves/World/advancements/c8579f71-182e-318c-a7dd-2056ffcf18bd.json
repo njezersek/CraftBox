@@ -1,0 +1,10 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "forest": "2018-06-08 12:25:12 +0300",
+      "forest_hills": "2018-06-08 12:22:53 +0300",
+      "plains": "2018-06-08 12:25:17 +0300"
+    },
+    "done": false
+  }
+}

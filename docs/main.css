@@ -1,0 +1,38 @@
+/*
+#333333 - background header
+#f89521 - orange
+#ee3a68 - red
+*/
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: #333333;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 750px;
+}
+
+.main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 25px;
+}
+
+.box {
+	padding: 15px;
+	background: #FFF;
+	border-radius: 3px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	display: block;
+	height: auto;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	float: center;
+	margin: 25px 0;
+}

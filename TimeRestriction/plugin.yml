@@ -1,0 +1,4 @@
+name: TimeRestriction
+main: org.eu.jezersek.TimeRestriction.TimeRestriction
+version: 1.1
+commands:
