@@ -2,9 +2,7 @@
 
 **Disclaimer:** Since this project was created as part of an internship project (Erasmus+), we have chosen to include a report on our development process and our decisions regarding the project. This report is not part of the documentation and is not needed if you want to do this project yourself, as it will not explain anything, that is not already explained in the documentation.
 
-## Abstract
-
-## The development process
+# The development process
 
 This project by itself is not very complicated and could, with more experience, probably be finished with more features even sooner, but we had to define our goals and be very realistic about them, since the project had to be finished within three weeks. Even when the program is over we will still continue to improve it, as we have a lot of ideas on how it could be a lot better.
 
@@ -21,4 +19,3 @@ During the making of the project we have come across many tough decisions and we
 One of the proposed additions to the project was automatic building generation in the world using WorldEdit and some scripts. While we explored the idea, we have concluded that this couldn't be properly implemented within the deadline, so we have added the idea to our todo list. Many of our other decisions were based on the deadline, but will be improved in our free time, after the project has ended.
 
 We also had to make a tough decision about customisation vs. simplicity, where we chose simplicity, as we believe our target demographic, parents, do not have the proper knowledge or are even willing to deal with more opions than needed. That is why we removed some features in the Web management Console. One of the more advanced features we still left included is the RCON Console, which could offer even advanced users the customisation they require.
-
