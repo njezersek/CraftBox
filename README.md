@@ -36,19 +36,6 @@ Users can connect to CraftBox's network and start playing on its Minecraft Serve
 
 **You can find all the instructions on setting up, installing plugins, configuring files and more in the [docs](docs) folder.**
 
-## **Todo list:**
-* Custom plugin upload
-* Generate custom structures using [WorldEdit](https://dev.bukkit.org/projects/worldedit "WorldEdit Website")
-* Separate builds for Raspberry Pi 3 and older versions (built-in WiFi or external Wireless adapter)
-* Edit permissions (some files are owned by root - a quick fix for www-data access) --> This one has a priority
-* Delete Pi user, replace with craftbox user (and fix permissions)
-* Manual updates (new releases will offer a script that, when run, will replace, add or edit updated files automatically)
-* A section in the web management console for applying these updates (maybe include them in a zip that can be uploaded)
-* Semi-automatic updates (A button in the web console that checks if an update is released, downloads it and installs it)
-* Automatic updates (Server checks for updates every week or so and automatically installs them if they are available)
-* A bit of code cleanup, some server optimisations, ...
-* Installation script
-
 For info on installation see the [Installation](docs/Installation.md) section.
 
 ## **Contributors:**
