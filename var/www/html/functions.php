@@ -1,4 +1,12 @@
 <?php
+function arr2yml(array $a) {
+	$out = '';
+	foreach ($a as $k => $v) {
+		$out .= "$k: $v" . PHP_EOL;
+	}
+	return $out;
+}
+
 	function arr2ini(array $a) {
 		$out = '';
 		foreach ($a as $k => $v) {
@@ -62,5 +70,29 @@
 
 	function reboot(){
 		shell_exec("sudo reboot");
+	}
+
+	function reconCommand($command){
+		require 'rcon/rcon-backend.php';
+		require 'rcon/minecraft_string.php';
+
+		$server = 'localhost';
+		$port = 25575;
+		$password = 'craftbox';
+
+		if ($command[0] == '/') {
+			$command = substr($command, 1);
+		}
+
+		try
+		{
+			$rcon = new RCon($server, $port, $password);
+			$return =  nl2br(minecraft_string($rcon->command($command)));
+		}
+		catch(Exception $e)
+		{
+			$return = $e->getMessage( );
+		}
+		return $return;
 	}
 ?>

@@ -1,15 +1,3 @@
-# This is the main configuration file for Spigot.
-# As you can see, there's tons to configure. Some options may impact gameplay, so use
-# with caution, and make sure you know what each option does before configuring.
-# For a reference for any variable inside this file, check out the Spigot wiki at
-# http://www.spigotmc.org/wiki/spigot-configuration/
-# 
-# If you need help with the configuration or have any questions related to Spigot,
-# join us at the IRC or drop by our forums and leave a post.
-# 
-# IRC: #spigot @ irc.spi.gt ( http://www.spigotmc.org/pages/irc/ )
-# Forums: http://www.spigotmc.org/
-
 config-version: 11
 commands:
   log: true
@@ -25,14 +13,7 @@ commands:
 settings:
   bungeecord: false
   late-bind: false
-  sample-count: 12
-  player-shuffle: 0
-  filter-creative-items: true
-  user-cache-size: 1000
-  int-cache-limit: 1024
   moved-wrongly-threshold: 0.0625
-  moved-too-quickly-multiplier: 10.0
-  item-dirty-ticks: 20
   timeout-time: 60
   restart-on-crash: true
   restart-script: ./scripts/minecraft.sh restart
@@ -44,12 +25,15 @@ settings:
       max: 2048.0
     attackDamage:
       max: 2048.0
-  save-user-cache-on-stop-only: false
+  sample-count: 12
+  player-shuffle: 0
+  filter-creative-items: true
+  user-cache-size: 1000
+  int-cache-limit: 1024
+  moved-too-quickly-multiplier: 10.0
+  item-dirty-ticks: 20
   debug: false
-advancements:
-  disable-saving: false
-  disabled:
-  - minecraft:story/disabled
+  save-user-cache-on-stop-only: false
 messages:
   restart: Server is restarting
   whitelist: You are not whitelisted on this server!
@@ -60,26 +44,13 @@ messages:
 stats:
   disable-saving: false
   forced-stats: {}
+advancements:
+  disable-saving: false
+  disabled:
+  - minecraft:story/disabled
 world-settings:
   default:
     verbose: true
-    mob-spawn-range: 4
-    growth:
-      cactus-modifier: 100
-      cane-modifier: 100
-      melon-modifier: 100
-      mushroom-modifier: 100
-      pumpkin-modifier: 100
-      sapling-modifier: 100
-      wheat-modifier: 100
-      netherwart-modifier: 100
-      vine-modifier: 100
-      cocoa-modifier: 100
-    entity-activation-range:
-      animals: 32
-      monsters: 32
-      misc: 16
-      tick-inactive-villagers: true
     entity-tracking-range:
       players: 48
       animals: 48
@@ -111,14 +82,31 @@ world-settings:
       entity: 50
     squid-spawn-range:
       min: 45.0
-    zombie-aggressive-towards-villager: true
-    item-despawn-rate: 1000
-    merge-radius:
-      item: 2.5
-      exp: 3.0
+    mob-spawn-range: 4
+    growth:
+      cactus-modifier: 100
+      cane-modifier: 100
+      melon-modifier: 100
+      mushroom-modifier: 100
+      pumpkin-modifier: 100
+      sapling-modifier: 100
+      wheat-modifier: 100
+      netherwart-modifier: 100
+      vine-modifier: 100
+      cocoa-modifier: 100
+    entity-activation-range:
+      animals: 32
+      monsters: 32
+      misc: 16
+      tick-inactive-villagers: true
     arrow-despawn-rate: 200
     enable-zombie-pigmen-portal-spawns: true
+    hanging-tick-frequency: 100
+    merge-radius:
+      exp: 3.0
+      item: 2.5
+    zombie-aggressive-towards-villager: true
     wither-spawn-sound-radius: 0
     view-distance: 4
-    hanging-tick-frequency: 100
+    item-despawn-rate: 1000
     nerf-spawner-mobs: false

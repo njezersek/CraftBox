@@ -3,13 +3,16 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require "functions.php";
+
 session_start();
 if(!isset($_SESSION['user'])){
     header("location: login.php");
     die();
 }
 
-require "config.php";
+$currentConfig = file_get_contents('/home/minecraft/plugins/TimeRestriction/config.yml');
+$config = yaml_parse($currentConfig);
 
 $msg = "";
 
@@ -25,12 +28,19 @@ if(isset($_POST['start']) && isset($_POST['end']) && isset($_POST['enable_time_r
   }
 
   if($ok){
-    $config['timeRestriction']['start'] = $start;
-    $config['timeRestriction']['end'] = $end;
-    $config['timeRestriction']['enabled'] = $enabled;
+    $config['start'] = date('H:i', strtotime($start));
+    $config['end'] = date('H:i', strtotime($end));
+    $config['enabled'] = $enabled;
 
-    $newJson = json_encode($config);
-    file_put_contents('/var/www/config.json', $newJson);
+		//var_dump($config);
+
+    $newConfig =
+'enabled: '.$config['enabled'].'
+start: "'.$config['start'].'"
+end: "'.$config['end'].'"';
+    file_put_contents('/home/minecraft/plugins/TimeRestriction/config.yml', $newConfig);
+
+		reconCommand('reload');
 
     $msg = "<div class='success'>Time restriction settings were updated.</div>";
   }
@@ -54,10 +64,10 @@ if(isset($_POST['start']) && isset($_POST['end']) && isset($_POST['enable_time_r
 					</div>
 					<div class="input-container">
 						<label class="switch">
-		        <input type="checkbox" <?php if($config['timeRestriction']['enabled'] == "true")echo "checked";?> onchange="document.getElementById('enable_time_restriction').value = this.checked+''">
+		        <input type="checkbox" <?php if($config['enabled'] == "true")echo "checked";?> onchange="document.getElementById('enable_time_restriction').value = this.checked+''">
 		        <span class="slider round"></span>
 		        </label>
-		        <input type="hidden" name="enable_time_restriction" id="enable_time_restriction" value="<?php echo $config['timeRestriction']['enabled']; ?>">
+		        <input type="hidden" name="enable_time_restriction" id="enable_time_restriction" value="<?php if($config['enabled'])echo "true";else echo "false"; ?>">
 					</div>
 				</div>
 
@@ -66,7 +76,7 @@ if(isset($_POST['start']) && isset($_POST['end']) && isset($_POST['enable_time_r
 						<label class="property">Restrict access from</label>
 					</div>
 					<div class="input-container">
-						<input type="text" name="start" value="<?php echo $config['timeRestriction']['start']; ?>">
+						<input type="text" name="start" value="<?php echo $config['start']; ?>">
 					</div>
 				</div>
 
@@ -75,7 +85,7 @@ if(isset($_POST['start']) && isset($_POST['end']) && isset($_POST['enable_time_r
 						<label class="property">until</label>
 					</div>
 					<div class="input-container">
-						<input type="text" name="end" value="<?php echo $config['timeRestriction']['end']; ?>">
+						<input type="text" name="end" value="<?php echo $config['end']; ?>">
 					</div>
 				</div>
 				<br>
