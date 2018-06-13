@@ -48,7 +48,7 @@ You will also need to install apache and php files, which hopefully you already 
 6. Install **screen** to be able to freely connect to the server's console and to run the startup/shutdown script.
 7. If the Minecraft Server is the only thing on the Pi (if you're not running other stuff/servers/whatever...), you can actually put all the files into the Pi user's directory (/home/pi) or even rename the Pi user, or (best if you have multiple stuff on the pi) create a new "minecraft" user and put the server files in there
 8. (maybe) Add the www-data (webserver/apache) user to "pi" group (or whichever group owns the files) by using `sudo adduser www-data pi`
-9. YOu can setup a DNS server, so you can access the Pi's Control Panel using **craftbox.tk** instead of **192.168.4.1**.
+9. You can setup a DNS server, so you can access the Pi's Control Panel using **craftbox.tk** instead of **192.168.4.1**.
 
 Now move all the files to their respective directories and start the server by running the **minecraft.sh** script.
 Firstly move to the root directory of the server (e.g. /home/minecraft), then use `./minecraft.sh start` to start the server.
@@ -60,3 +60,9 @@ One last thing is automatically starting the server at reboot, which can be done
 You can do this by using `sudo crontab -e`, which will show you a text dialog, where you can choose your favourite text editor. For beginners we recommend pressing Enter, to choose **nano**, a very simple but useful editor. Now it will show you a new window with some text. Ignore all that and use your arrow keys to move to the bottom of the page, where you can add (on a separate line) the text `@reboot /bin/bash /home/minecraft/minecraft.sh start`.
 
 You might also want to automatically update other packages, which you can do by adding `* * * * 1 root (apt update && apt -y -d upgrade) > /dev/null` under your newly added startup command.
+
+**DNS Configuration:**
+
+Use your favourite text editor to edit _/etc/resolv.conf.head_. We use the _resolf.conf.head_ instead of _resolv.conf_, because _resolv.conf.head_ doesn't get rewritten at reboot, like _resolv.conf_ does.
+
+The full command would be `sudo nano /etc/resolv.conf.head`. Here you can add **craftbox.tk 127.0.0.1** and save the file. By doing this we have redirected the _craftbox.tk_ domain to our localhost, 127.0.0.1 (our Raspberry Pi).
