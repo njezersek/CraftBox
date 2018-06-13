@@ -48,6 +48,7 @@ You will also need to install apache and php files, which hopefully you already 
 6. Install **screen** to be able to freely connect to the server's console and to run the startup/shutdown script.
 7. If the Minecraft Server is the only thing on the Pi (if you're not running other stuff/servers/whatever...), you can actually put all the files into the Pi user's directory (/home/pi) or even rename the Pi user, or (best if you have multiple stuff on the pi) create a new "minecraft" user and put the server files in there
 8. (maybe) Add the www-data (webserver/apache) user to "pi" group (or whichever group owns the files) by using `sudo adduser www-data pi`
+9. YOu can setup a DNS server, so you can access the Pi's Control Panel using **craftbox.tk** instead of **192.168.4.1**.
 
 Now move all the files to their respective directories and start the server by running the **minecraft.sh** script.
 Firstly move to the root directory of the server (e.g. /home/minecraft), then use `./minecraft.sh start` to start the server.
