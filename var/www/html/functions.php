@@ -58,13 +58,13 @@ function arr2yml(array $a) {
 	function restartMinecraft(){
 		$running = shell_exec("ps aux | grep spigot.jar | grep -v grep | grep -v SCREEN");
 		if(empty($running)) {
-			exec("sudo -u pi /home/minecraft/scripts/minecraft.sh start");
+			exec("sudo -u spigot /home/spigot/scripts/spigot.sh start");
 		} else {
 			do {
-				exec("sudo -u pi /home/minecraft/scripts/minecraft.sh stop");
+				exec("sudo -u spigot /home/spigot/scripts/spigot.sh stop");
 				$running = shell_exec("ps aux | grep spigot.jar | grep -v grep | grep -v SCREEN");
 				} while (empty($running) != true);
-				exec("sudo -u pi /home/minecraft/scripts/minecraft.sh start");
+				exec("sudo -u spigot /home/spigot/scripts/spigot.sh start");
 			}
 		}
 
@@ -72,7 +72,7 @@ function arr2yml(array $a) {
 		shell_exec("sudo reboot");
 	}
 
-	function reconCommand($command){
+	function rconCommand($command){
 		require 'rcon/rcon-backend.php';
 		require 'rcon/minecraft_string.php';
 
@@ -86,7 +86,7 @@ function arr2yml(array $a) {
 
 		try
 		{
-			$rcon = new RCon($server, $port, $password);
+			$rcon = new Rcon($server, $port, $password);
 			$return =  nl2br(minecraft_string($rcon->command($command)));
 		}
 		catch(Exception $e)

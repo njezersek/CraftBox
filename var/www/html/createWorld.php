@@ -11,7 +11,7 @@ if(!isset($_SESSION['user'])){
 
 require "functions.php";
 
-$currentConfig = file_get_contents('/home/minecraft/server.properties');
+$currentConfig = file_get_contents('/home/spigot/server.properties');
 $config = ini2arr($currentConfig);
 
 $msg = "";
@@ -33,7 +33,7 @@ if($ok){
 	$config['level-name'] = "saves/".$level_name;
   $newConfig = arr2ini($config);
 
-  file_put_contents('/home/minecraft/server.properties', $newConfig);
+  file_put_contents('/home/spigot/server.properties', $newConfig);
 	restartMinecraft();
 
   $msg = "<div class='info'>Minecraft server is now restarting and generating the world, this will only take a minute.</div>";

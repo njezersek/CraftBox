@@ -11,7 +11,7 @@ if(!isset($_SESSION['user'])){
     die();
 }
 
-$currentConfig = file_get_contents('/home/minecraft/plugins/TimeRestriction/config.yml');
+$currentConfig = file_get_contents('/home/spigot/plugins/TimeRestriction/config.yml');
 $config = yaml_parse($currentConfig);
 
 $msg = "";
@@ -38,9 +38,9 @@ if(isset($_POST['start']) && isset($_POST['end']) && isset($_POST['enable_time_r
 'enabled: '.$config['enabled'].'
 start: "'.$config['start'].'"
 end: "'.$config['end'].'"';
-    file_put_contents('/home/minecraft/plugins/TimeRestriction/config.yml', $newConfig);
+    file_put_contents('/home/spigot/plugins/TimeRestriction/config.yml', $newConfig);
 
-		reconCommand('reload');
+		rconCommand('reload');
 
     $msg = "<div class='success'>Time restriction settings were updated.</div>";
   }

@@ -22,8 +22,8 @@ if(isset($_GET["world"])){
 
 
 function zipdir($worldName){
-  $dest = "/var/www/html/worlds";
-  $worldsFolder = "/home/minecraft/saves";
+  $dest = "/var/www/html/saves";
+  $worldsFolder = "/home/spigot/saves";
 
 	class FlxZipArchive extends ZipArchive {
 		public function addDir($location, $name) {

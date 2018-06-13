@@ -11,7 +11,7 @@ if(!isset($_SESSION['user'])){
     die();
 }
 
-$currentConfig = file_get_contents('/home/minecraft/server.properties');
+$currentConfig = file_get_contents('/home/spigot/server.properties');
 $config = ini2arr($currentConfig);
 
 $msg = "";
@@ -25,7 +25,7 @@ foreach($config as $property => $value){
 if($ok){
   $newConfig = arr2ini($config);
 
-  file_put_contents('/home/minecraft/server.properties', $newConfig);
+  file_put_contents('/home/spigot/server.properties', $newConfig);
   $msg .= "<div class='info msg'><div class='content'>Changes were saved and will be applied when the Minecraft Server restarts.</div> <a class='button' href='?restart=true&confirm=true'>Restart</a></div>";
 }
 

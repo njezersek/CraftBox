@@ -5,5 +5,5 @@
 		die();
 	}
 	
-	exec("sudo -u pi /home/minecraft/scripts/minecraft.sh stop");
+	exec("sudo -u spigot /home/spigot/scripts/spigot.sh stop");
 ?>

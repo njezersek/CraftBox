@@ -9,14 +9,14 @@
 	$msg = "";
 	if(isset($_GET["activate"])) {
 		$world = $_GET["activate"];
-		$currentConfig = file_get_contents('/home/minecraft/server.properties');
+		$currentConfig = file_get_contents('/home/spigot/server.properties');
 		$config = ini2arr($currentConfig);
 
 		$config['level-name'] = "saves/".$world;
 
 		$newConfig = arr2ini($config);
 
-		if(file_put_contents('/home/minecraft/server.properties', $newConfig)) {
+		if(file_put_contents('/home/spigot/server.properties', $newConfig)) {
 			$msg = "<div class='info msg'><div class='content'>World \"".$world."\" was successfuly activated. Changes will be applied when the Minecraft Server restarts.</div> <a class='button' href='?restart=true&confirm=true'>restart</a></div>";
 		} else {
 			$msg .= "<div class='error'>Could not write to file.</div>";
@@ -26,10 +26,9 @@
 	if(isset($_GET["delete"])) {
 		$world = $_GET["delete"];
 		if(isset($_GET["confirm"])) {
-			shell_exec("sudo chmod -R 777 /home/minecraft/saves");
-			rrmdir("/home/minecraft/saves/".$world);
-			rrmdir("/home/minecraft/saves/".$world."_nether");
-			rrmdir("/home/minecraft/saves/".$world."_the_end");
+			rrmdir("/home/spigot/saves/".$world);
+			rrmdir("/home/spigot/saves/".$world."_nether");
+			rrmdir("/home/spigot/saves/".$world."_the_end");
 			$msg .= "<div class='success'>World \"".$world."\" was successfully deleted.</div>";
 		} else {
 			$msg .=  "<div class='warning msg'><div class='content'>Are you sure you want to delete world \"".$world."\"? This action is irreversible!</div> <a class='button' href='?delete=".$world."&confirm=true'>delete</a></div>";
@@ -73,13 +72,13 @@
 				<a href="upload.php" class="button">Upload world</a>
 				<a href="createWorld.php" class="button">Create new world</a><br><br>
 				<?php
-					$currentConfig = file_get_contents('/home/minecraft/server.properties');
+					$currentConfig = file_get_contents('/home/spigot/server.properties');
 					$config = ini2arr($currentConfig);
 					$selectedWorld = basename($config['level-name']);
 				?>
 				<table class="worlds-table">
 				<?php
-					$path = "/home/minecraft/saves";
+					$path = "/home/spigot/saves";
 					$files = array_diff(scandir($path), array('.', '..'));
 
 					foreach ($files as $key => $value) {

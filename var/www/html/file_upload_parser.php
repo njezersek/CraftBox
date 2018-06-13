@@ -20,7 +20,7 @@ if(unzipdir($fileTmpLoc)){
 
 function unzipdir($path){
 	$zip = new ZipArchive;
-  $dest = "/home/minecraft/saves";
+  $dest = "/home/spigot/saves";
 
   if ($zip->open($path) === TRUE) {
       if(!$zip->extractTo($dest)){
