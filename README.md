@@ -47,6 +47,7 @@ Users can connect to CraftBox's network and start playing on its Minecraft Serve
 * Semi-automatic updates (A button in the web console that checks if an update is released, downloads it and installs it)
 * Automatic updates (Server checks for updates every week or so and automatically installs them if they are available)
 * A bit of code cleanup, some server optimisations, ...
+* Installation script
 
 For info on installation see the [Installation](docs/Installation.md) section.
 
